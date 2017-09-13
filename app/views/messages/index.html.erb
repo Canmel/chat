@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="ibox float-e-margins" style="overflow: auto;">
+    <div class="ibox-title">
+      <h5><%= render_table_head(@q) %></h5>
+      <div class="ibox-tools">
+        <%= link_to "<i type='button' class='fa fa-hourglass-half popover-show' data-placement='bottom' data-trigger='hover' data-container='body' data-toggle='popover' data-content='待审批'></i>".html_safe, messages_path('q[status_eq]': Message.statuses[:examine]) %>
+        <%= link_to "<i type='button' class='fa fa-check-circle-o popover-show' data-placement='bottom' data-trigger='hover' data-container='body' data-toggle='popover' data-content='正常'></i>".html_safe, messages_path('q[status_eq]': Message.statuses[:active]) %>
+        <%= link_to "<i type='button' class='fa fa-eye popover-show' data-placement='bottom' data-trigger='hover' data-container='body' data-toggle='popover' data-content='显示'></i>".html_safe, messages_path('q[status_eq]': Message.statuses[:active], 'q[showable_eq]': Message.showables[:show]) %>
+        <%= link_to "<i type='button' class='fa fa-times popover-show' data-placement='bottom' data-trigger='hover' data-container='body' data-toggle='popover' data-content='作废'></i>".html_safe, messages_path('q[status_eq]': Message.statuses[:archived]) %>
+      </div>
+    </div>
+    <div class="ibox-content">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>信息</th>
+          <th>时间</th>
+          <th>用户ID</th>
+          <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+          <% @messages.each_with_index do |message, index|%>
+            <tr>
+              <td><%= sequence index %></td>
+              <td><%= message.context %></td>
+              <td><%= message.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+              <td><%= message.userid %></td>
+              <td>
+                <% if message.examine? %>
+                  <i class="fa fa-check text-navy btn-examin" meesage="<%= message.id %>"></i>
+                  <%= link_to "<i class='fa  fa-times text-navy'></i>".html_safe, message, data: {confirm: "确认要作废?"}, method: :delete  %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="text-center">
+      <%= paginate @messages %>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+          审批
+        </h4>
+      </div>
+      <div class="modal-body">
+        <form id="examine_form" method="get" class="pjax-form">
+          <div class="float-e-margins">
+            <i>点击提交将同意此次审批</i>
+          </div>
+          <div class="float-e-margins">
+            <div class="row">
+              <input type="checkbox" class="checkbox col-sm-1" name="showable" checked>将内容显示在对话框中
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+        </button>
+        <button type="button" class="btn btn-primary">
+          提交
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+  <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-info " href="#"><i class="fa fa-bars"></i> </a>
+  </div>
+
+  <ul class="nav navbar-top-links navbar-right">
+    <li class="dropdown">
+      <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+        <i class="fa fa-user"></i> <span class="label label-primary"><%= current_user.name.first.upcase %></span>
+      </a>
+      <ul class="dropdown-menu dropdown-alerts">
+        <li>
+          <%= link_to "<div><i class='fa fa-trash fa-fw'></i> 账户注销<span class='pull-right small'>#{current_user.email}/#{current_user.name}</span></div>".html_safe, destroy_user_session_path, method: :delete %>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>

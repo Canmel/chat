@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="ibox float-e-margins" style="overflow: auto;">
+    <div class="ibox-title">
+      <h5>聊天信息录入</h5>
+      <div class="ibox-tools">
+        <%= link_to "<i type='button' class='fa fa-hourglass-half popover-show' data-placement='bottom' data-trigger='hover' data-container='body' data-toggle='popover' data-content='待审批'></i>".html_safe, messages_path('q[status_eq]': Message.statuses[:examine]) %>
+        <%= link_to "<i type='button' class='fa fa-check-circle-o popover-show' data-placement='bottom' data-trigger='hover' data-container='body' data-toggle='popover' data-content='正常'></i>".html_safe, messages_path('q[status_eq]': Message.statuses[:active]) %>
+        <%= link_to "<i type='button' class='fa fa-eye popover-show' data-placement='bottom' data-trigger='hover' data-container='body' data-toggle='popover' data-content='显示'></i>".html_safe, messages_path('q[status_eq]': Message.statuses[:active], 'q[showable_eq]': Message.showables[:show]) %>
+        <%= link_to "<i type='button' class='fa fa-times popover-show' data-placement='bottom' data-trigger='hover' data-container='body' data-toggle='popover' data-content='作废'></i>".html_safe, messages_path('q[status_eq]': Message.statuses[:archived]) %>
+      </div>
+    </div>
+    <div class="ibox-content">
+      <%= bootstrap_form_for(@message, layout: :horizontal, :html => { class: 'pjax-form col-md-10' }) do |f| %>
+          <%= f.text_field :context, label: "消息" %>
+          <div class="form-group text-center">
+            <%= f.submit "保存", class: "btn meedesidy_btn_save" %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title> - 登录</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <link rel="shortcut icon" href="favicon.ico">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <!--[if lt IE 9]>
+  <meta http-equiv="refresh" content="0;ie.html" />
+  <![endif]-->
+  <script>if(window.top !== window.self){ window.top.location = window.location;}</script>
+</head>
+
+<body class="gray-bg">
+
+<div class="middle-box text-center loginscreen  animated fadeInDown">
+  <div>
+    <div>
+      <h1 class="logo-name">C</h1>
+    </div>
+    <h3>欢迎使用 CHAT</h3>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "m-t", role: "form"}) do |f| %>
+        <div class="form-group">
+          <%= f.email_field :email, autofocus: true, placeholder: "用户名", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "密码"%>
+        </div>
+        <%= f.submit "登 录", class: "btn btn-primary block full-width m-b" %>
+    <% end %>
+  </div>
+</div>
+<!-- 全局js -->
+</body>
+</html>

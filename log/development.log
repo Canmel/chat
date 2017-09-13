@@ -1,0 +1,268 @@
+Started GET "/" for 127.0.0.1 at 2017-09-13 14:56:18 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/login" for 127.0.0.1 at 2017-09-13 14:56:18 +0800
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (1077.0ms)
+Completed 200 OK in 1099ms (Views: 1082.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/auth/favicon.ico" for 127.0.0.1 at 2017-09-13 14:56:19 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/auth/favicon.ico"):
+  
+actionpack (5.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.5) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/baily/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/baily/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/baily/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /home/baily/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [26 times] (10.0ms)
+  Rendered /home/baily/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.5ms)
+  Rendering /home/baily/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/baily/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/baily/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.5ms)
+Started POST "/auth/login" for 127.0.0.1 at 2017-09-13 14:56:26 +0800
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1l68rtYUweEXvyFYmAzAD4Qe9Swu8qdZV6A16lCYzHPj7YY79TqRXfRw+Is8nSoCKAuX0l9Zy/CpxgdGgtOYSA==", "user"=>{"email"=>"meedesidy@mee.cn", "password"=>"[FILTERED]"}, "commit"=>"登 录"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'meedesidy@mee.cn' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.5ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1l68rtYUweEXvyFYmAzAD4Qe9Swu8qdZV6A16lCYzHPj7YY79TqRXfRw+Is8nSoCKAuX0l9Zy/CpxgdGgtOYSA==", "user"=>{"email"=>"meedesidy@mee.cn", "password"=>"[FILTERED]"}, "commit"=>"登 录"}
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (27.6ms)
+Completed 200 OK in 195ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2017-09-13 14:56:38 +0800
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JR3VUX7VDCpSHUEGsZnoeKQf+u8/OeBz7fd5cAf+GnUQru/EXftclrHSmNUVCAJ1CAqYEU6SjNoTkUvc1bVOTg==", "user"=>{"email"=>"lidejian@skio.cn", "password"=>"[FILTERED]"}, "commit"=>"登 录"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'lidejian@skio.cn' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.4ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JR3VUX7VDCpSHUEGsZnoeKQf+u8/OeBz7fd5cAf+GnUQru/EXftclrHSmNUVCAJ1CAqYEU6SjNoTkUvc1bVOTg==", "user"=>{"email"=>"lidejian@skio.cn", "password"=>"[FILTERED]"}, "commit"=>"登 录"}
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (33.4ms)
+Completed 200 OK in 195ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2017-09-13 14:56:47 +0800
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9+AKEtCOVVJ2jAMN+fM5SwHrDAl7WPJ3N2ZY1WroNb/CUzCH86AF7pVD2t5dYtNGrf5u9wrznt7JAGp5uKNhhA==", "user"=>{"email"=>"admin@skio.cn", "password"=>"[FILTERED]"}, "commit"=>"登 录"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@skio.cn' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 164ms (ActiveRecord: 0.5ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9+AKEtCOVVJ2jAMN+fM5SwHrDAl7WPJ3N2ZY1WroNb/CUzCH86AF7pVD2t5dYtNGrf5u9wrznt7JAGp5uKNhhA==", "user"=>{"email"=>"admin@skio.cn", "password"=>"[FILTERED]"}, "commit"=>"登 录"}
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (36.2ms)
+Completed 200 OK in 194ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2017-09-13 14:57:04 +0800
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RNHReAC4IAkWqtvhiU8jx2rxMqOTkrumRAsJUnlP9qNxYuvtI5ZwtfVlAjIt3snKxuRQXeI51w+6bTv+qwSimA==", "user"=>{"email"=>"admin@skio.cn", "password"=>"[FILTERED]"}, "commit"=>"登 录"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@skio.cn' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 171ms (ActiveRecord: 0.5ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RNHReAC4IAkWqtvhiU8jx2rxMqOTkrumRAsJUnlP9qNxYuvtI5ZwtfVlAjIt3snKxuRQXeI51w+6bTv+qwSimA==", "user"=>{"email"=>"admin@skio.cn", "password"=>"[FILTERED]"}, "commit"=>"登 录"}
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (38.6ms)
+Completed 200 OK in 200ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2017-09-13 14:57:09 +0800
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7DsFEYPjBRuGYT3cU7URtHauShFsWg/NU4qF9eF7rKLZiD+EoM1Vp2Wu5A/3JPu52rso7x3xY2St7LdZMzD4mQ==", "user"=>{"email"=>"admin@skio.cn", "password"=>"[FILTERED]"}, "commit"=>"登 录"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@skio.cn' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 170ms (ActiveRecord: 0.4ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7DsFEYPjBRuGYT3cU7URtHauShFsWg/NU4qF9eF7rKLZiD+EoM1Vp2Wu5A/3JPu52rso7x3xY2St7LdZMzD4mQ==", "user"=>{"email"=>"admin@skio.cn", "password"=>"[FILTERED]"}, "commit"=>"登 录"}
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (29.1ms)
+Completed 200 OK in 192ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2017-09-13 14:57:13 +0800
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Y6JpB7Jz3cTXzq0Yv5YWwHyaacs7GMDrpThUkdzmwDMPbMxPeefy/CQ42fGb7JWrecLWV1HD6pQ8tP+lTjPOw==", "user"=>{"email"=>"admin@skio.cn", "password"=>"[FILTERED]"}, "commit"=>"登 录"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@skio.cn' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 164ms (ActiveRecord: 0.7ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Y6JpB7Jz3cTXzq0Yv5YWwHyaacs7GMDrpThUkdzmwDMPbMxPeefy/CQ42fGb7JWrecLWV1HD6pQ8tP+lTjPOw==", "user"=>{"email"=>"admin@skio.cn", "password"=>"[FILTERED]"}, "commit"=>"登 录"}
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (31.3ms)
+Completed 200 OK in 191ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2017-09-13 14:57:19 +0800
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OOe1wlmYGAf/n/PuWwC1PwA3qRNiZxammDTzURBpnYcNVI9XerZIuxxQKj3/kV8yrCLL7RPMeg9mUsH9wiLJvA==", "user"=>{"email"=>"admin@skio.cn", "password"=>"[FILTERED]"}, "commit"=>"登 录"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@skio.cn' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 170ms (ActiveRecord: 0.5ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OOe1wlmYGAf/n/PuWwC1PwA3qRNiZxammDTzURBpnYcNVI9XerZIuxxQKj3/kV8yrCLL7RPMeg9mUsH9wiLJvA==", "user"=>{"email"=>"admin@skio.cn", "password"=>"[FILTERED]"}, "commit"=>"登 录"}
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (33.7ms)
+Completed 200 OK in 198ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2017-09-13 14:59:07 +0800
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K/7Uph/Jp5WLCZQxkNeI+0Qu8A0Hfntq1mGCxsek6jMeTe4zPOf3KWjGTeI0RmL26DuS83bVF8MoB7BqFe++CA==", "user"=>{"email"=>"admin@skio.cn", "password"=>"[FILTERED]"}, "commit"=>"登 录"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@skio.cn' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2017-09-13 06:59:07', `last_sign_in_at` = '2017-09-07 07:07:17', `sign_in_count` = 4, `updated_at` = '2017-09-13 06:59:07' WHERE `users`.`id` = 2[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 176ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-13 14:59:07 +0800
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_left.html.erb (0.8ms)
+  Rendered layouts/_head.html.erb (0.6ms)
+Completed 200 OK in 58ms (Views: 53.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/messages?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-09-13 14:59:11 +0800
+Processing by MessagesController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `messages` WHERE `messages`.`status` = 2[0m
+  Rendering messages/index.html.erb
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`status` = 2 ORDER BY `messages`.`id` DESC LIMIT 10 OFFSET 0[0m
+  Rendered messages/index.html.erb (13.1ms)
+Completed 200 OK in 39ms (Views: 16.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/messages/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-09-13 14:59:12 +0800
+Processing by MessagesController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/new.html.erb
+  Rendered messages/new.html.erb (5.6ms)
+Completed 200 OK in 23ms (Views: 10.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/messages?q%5Bstatus_eq%5D=1&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-09-13 14:59:15 +0800
+Processing by MessagesController#index as HTML
+  Parameters: {"q"=>{"status_eq"=>"1"}, "_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `messages` WHERE `messages`.`status` = 1[0m
+  Rendering messages/index.html.erb
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`status` = 1 ORDER BY `messages`.`id` DESC LIMIT 10 OFFSET 0[0m
+  Rendered messages/index.html.erb (13.6ms)
+Completed 200 OK in 28ms (Views: 16.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/messages?q%5Bshowable_eq%5D=1&q%5Bstatus_eq%5D=1&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-09-13 14:59:15 +0800
+Processing by MessagesController#index as HTML
+  Parameters: {"q"=>{"showable_eq"=>"1", "status_eq"=>"1"}, "_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `messages` WHERE (`messages`.`showable` = 1 AND `messages`.`status` = 1)[0m
+  Rendering messages/index.html.erb
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE (`messages`.`showable` = 1 AND `messages`.`status` = 1) ORDER BY `messages`.`id` DESC LIMIT 10 OFFSET 0[0m
+  Rendered messages/index.html.erb (15.5ms)
+Completed 200 OK in 33ms (Views: 19.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/messages?q%5Bstatus_eq%5D=2&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-09-13 14:59:17 +0800
+Processing by MessagesController#index as HTML
+  Parameters: {"q"=>{"status_eq"=>"2"}, "_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `messages` WHERE `messages`.`status` = 2[0m
+  Rendering messages/index.html.erb
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`status` = 2 ORDER BY `messages`.`id` DESC LIMIT 10 OFFSET 0[0m
+  Rendered messages/index.html.erb (14.4ms)
+Completed 200 OK in 31ms (Views: 17.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/messages?q%5Bstatus_eq%5D=0&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-09-13 14:59:18 +0800
+Processing by MessagesController#index as HTML
+  Parameters: {"q"=>{"status_eq"=>"0"}, "_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `messages` WHERE `messages`.`status` = 0[0m
+  Rendering messages/index.html.erb
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`status` = 0 ORDER BY `messages`.`id` DESC LIMIT 10 OFFSET 0[0m
+  Rendered messages/index.html.erb (12.6ms)
+Completed 200 OK in 25ms (Views: 15.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/messages?q%5Bstatus_eq%5D=0&" for 127.0.0.1 at 2017-09-13 15:07:07 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"q"=>{"status_eq"=>"0"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `messages` WHERE `messages`.`status` = 0[0m
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`status` = 0 ORDER BY `messages`.`id` DESC LIMIT 10 OFFSET 0[0m
+  Rendered messages/index.html.erb within layouts/application (41.4ms)
+  Rendered layouts/_left.html.erb (0.7ms)
+  Rendered layouts/_head.html.erb (0.6ms)
+Completed 200 OK in 379ms (Views: 333.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/messages/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-09-13 15:07:09 +0800
+Processing by MessagesController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/new.html.erb
+  Rendered messages/new.html.erb (14.9ms)
+Completed 200 OK in 29ms (Views: 20.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/messages?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-09-13 15:07:09 +0800
+Processing by MessagesController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `messages` WHERE `messages`.`status` = 2[0m
+  Rendering messages/index.html.erb
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`status` = 2 ORDER BY `messages`.`id` DESC LIMIT 10 OFFSET 0[0m
+  Rendered messages/index.html.erb (15.5ms)
+Completed 200 OK in 35ms (Views: 19.6ms | ActiveRecord: 2.7ms)
+
+

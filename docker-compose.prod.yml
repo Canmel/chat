@@ -1,0 +1,39 @@
+web:
+  image: daocloud.io/skio_dep/skio_cars:production-057c427b16f409fa5c4de4bd52c16b05e1395304-2
+  restart: always
+  ports:
+    - '80'
+    - '22'
+  volumes:
+    - /home/docker/data/chat/config/database.yml.ci:/rails_app/config/database.yml.ci
+    - /home/docker/data/chat/config/secrets.yml:/rails_app/config/secrets.yml
+    - /home/docker/data/chat/config/application.yml:/rails_app/config/application.yml
+    - /home/docker/data/chat/log:/rails_app/log
+  environment:
+    - RUN_CONTEXT=prod
+    - VIRTUAL_HOST=chat.skio.cn
+  command: /bin/bash docker_web_run.sh
+
+redis:
+  image: daocloud.io/daocloud/dao-redis:master-init
+  restart: always
+  environment:
+    - REDIS_PASS=**None**
+    - REDIS_APPENDONLY=yes
+    - REDIS_APPENDFSYNC=everysec
+  volumes:
+    - /home/docker/data/cars/redis_data:/data
+
+#sidekiq:
+#  image: daocloud.io/skio_dep/skio_boss:production-057c427b16f409fa5c4de4bd52c16b05e1395304-2
+#  links:
+#    - redis
+#  environment:
+#    - REDIS_HOST=redis
+#  volumes:
+#    - /home/docker/data/boss/config/database.yml.ci:/rails_app/config/database.yml.ci
+#    - /home/docker/data/boss/config/secrets.yml:/rails_app/config/secrets.yml
+#    - /home/docker/data/boss/log:/rails_app/log
+#  command: bundle exec sidekiq -e production -C config/sidekiq.yml
+#
+#
