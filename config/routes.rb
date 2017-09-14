@@ -12,4 +12,6 @@ Rails.application.routes.draw do
       get "show_all"
     end
   end
+
+  get "signatures/signature"
 end
