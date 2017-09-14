@@ -13,6 +13,7 @@ module Chat
     # -- all .rb files in that directory are automatically loaded.
     config.i18n.default_locale = 'zh-CN'
 
+
     config.assets.precompile << Proc.new do |path|
       if path =~ /\.(css|js|scss|png|jpg|gif|json)\z/
         full_path = Rails.application.assets.resolve(path).to_path
@@ -36,5 +37,6 @@ module Chat
         end
       end
     end
+
   end
 end

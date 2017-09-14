@@ -207,6 +207,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   enum_help
+  execjs
   font-awesome-rails (= 4.7.0.1)
   jbuilder (~> 2.5)
   jquery-rails
