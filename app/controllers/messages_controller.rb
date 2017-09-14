@@ -38,6 +38,7 @@ class MessagesController < ApplicationController
         if @message.save
           redirect_to messages_path("q[status_eq]": 1, "q[showable_eq]": 1)
         else
+          p @message.errors
           render :new
         end
       end
