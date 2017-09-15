@@ -13,7 +13,7 @@ class SignaturesController < ApplicationController
     response.set_header('Access-Control-Allow-Origin', "*")
     respond_to do |format|
       format.json do
-        render json: {ticket: ticket, nonceStr: noncestr, appid: APPID, signature: signature}
+        render json: {ticket: ticket, nonceStr: noncestr, appid: APPID, signature: signature, timestamp: timestamp}
       end
     end
   end
