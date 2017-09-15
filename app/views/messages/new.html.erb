@@ -12,6 +12,7 @@
     <div class="ibox-content">
       <%= bootstrap_form_for(@message, layout: :horizontal, :html => { class: 'pjax-form col-md-10' }) do |f| %>
           <%= f.text_field :context, label: "消息" %>
+          <%= f.text_field :userid, label: "昵称" %>
           <div class="form-group text-center">
             <%= f.submit "保存", class: "btn meedesidy_btn_save" %>
           </div>
