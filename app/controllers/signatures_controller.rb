@@ -2,13 +2,14 @@ class SignaturesController < ApplicationController
   require "net/https"
   require "uri"
 
-  APPID = "wx7ce819a7353855ee".freeze
+  APPID = "wx66df2ecaa4560670".freeze
+  APPSECRET = "3bf0b90aa88ae22470e33e80255c8f96"
 
   def signature
     ticket = get_ticket(get_token)
     noncestr = "skio#{rand(99999)}"
     timestamp = Time.now.to_i
-    signature = get_signature(ticket,timestamp,params[:url],noncestr)
+    signature = get_signature(ticket,timestamp,params[:url], noncestr)
     response.set_header('Access-Control-Allow-Origin', "*")
     respond_to do |format|
       format.json do
@@ -28,11 +29,12 @@ class SignaturesController < ApplicationController
   end
 
   def get_token
-    uri = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=#{APPID}&secret=a3df8387ae58d0e4b0bf710fe4a889e8" ;
+    uri = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=#{APPID}&secret=#{APPSECRET}" ;
     html_response = nil
     open(uri) do |http|
       html_response = http.read
     end
+    p html_response
     JSON.parse(html_response)["access_token"]
   end
 
