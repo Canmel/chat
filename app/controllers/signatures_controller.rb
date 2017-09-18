@@ -35,6 +35,7 @@ class SignaturesController < ApplicationController
       access_token = JSON.parse(html_response)["access_token"]
       Redis::Value.new("access_token", expiration: MAX_WAIT_TIME).value = access_token
     else
+      Logger.info("从redis获取token")
       Redis::Value.new("access_token", expiration: MAX_WAIT_TIME).value
     end
   end
@@ -49,6 +50,7 @@ class SignaturesController < ApplicationController
       ticket = JSON.parse(html_response)["ticket"]
       Redis::Value.new("ticket", expiration: MAX_WAIT_TIME).value = ticket
     else
+      logger.info("从redis获取ticket")
       Redis::Value.new("ticket", expiration: MAX_WAIT_TIME).value
     end
   end
