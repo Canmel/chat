@@ -1,3 +1,3 @@
 FROM daocloud.io/rails:onbuild
 
-CMD apt-get -y install redis-server
+CMD apt-get update && apt-get -y install redis-server
