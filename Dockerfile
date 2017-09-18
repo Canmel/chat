@@ -1,3 +1,3 @@
 FROM daocloud.io/rails:onbuild
 
-RUN yum -y update && yum -y install redis
+RUN apt-get -y update && apt-get install redis-server
