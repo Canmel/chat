@@ -24,7 +24,7 @@ if [ "$RUN_CONTEXT" = "dev" ]; then
     #whenever -w
     #启动rails
     #echo `bundle exec rails s -b 0.0.0.0 -p 3000`
-    passenger start --environment development --port 3000
+    #passenger start --environment development --port 3000
 
 #预发布环境
 elif [ "$RUN_CONTEXT" = "pre_prod" ]; then
@@ -73,10 +73,7 @@ elif [ "$RUN_CONTEXT" = "prod" ]; then
     #开启rails定时任务
     whenever -i --set environment=production
 
-    nohup /bin/bash -c "bundle exec sidekiq -e production -C config/sidekiq.yml" &
-
-    #启动rails
-    passenger start
+   echo `bundle exec rails s -b 0.0.0.0 -p 3000`
 else
     echo "unknown RUN_CONTEXT:${RUN_CONTEXT}"
 fi
