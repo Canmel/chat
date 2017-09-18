@@ -44,6 +44,9 @@ gem 'ransack'
 gem 'enum_help'
 gem 'kaminari', '1.0.0'
 
+gem 'redis-rails', '~> 5.0.1'
+gem 'redis-objects', '~> 1.2.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
