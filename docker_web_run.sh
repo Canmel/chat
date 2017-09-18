@@ -73,7 +73,9 @@ elif [ "$RUN_CONTEXT" = "prod" ]; then
     #开启rails定时任务
     whenever -i --set environment=production
 
-   echo `bundle exec rails s -b 0.0.0.0 -p 3000`
+    echo `service redis-server start`
+
+    echo `bundle exec rails s -b 0.0.0.0 -p 3000`
 else
     echo "unknown RUN_CONTEXT:${RUN_CONTEXT}"
 fi
