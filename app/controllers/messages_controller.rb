@@ -51,7 +51,7 @@ class MessagesController < ApplicationController
   end
 
   def show_all
-    @messages = Message.active.show.order("created_at desc")[0,30].reverse
+    @messages = Message.active.show.order("created_at desc")[0,30]
     response.set_header('Access-Control-Allow-Origin', "*")
     respond_to do |format|
       format.json do
